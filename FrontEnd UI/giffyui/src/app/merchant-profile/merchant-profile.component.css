@@ -1,0 +1,82 @@
+.merchantName{
+  position:fixed;
+  color: black;
+  margin-left: 75vw;
+  margin-top: 8vh;
+  font-size: xx-large;
+  z-index: 1;
+}
+
+
+.example-card {
+  position: absolute;
+  width: 40vw;
+  height: 45vh ;
+  margin-left: 30vw;
+  margin-top: 25vh;
+  border-radius: 5vh;
+  background-color : transparent;
+  box-shadow:  0 0 8em -1em rgb(8, 8, 8);
+}
+
+.bodyCard{
+  width: 40vw;
+  margin-top: 4vh;
+}
+
+
+.title{
+  color: black;
+  font-size: 2vw;
+  margin-left: 1vw;
+  font-family: 'Belanosima', sans-serif;
+  font-family: 'Cinzel', serif;
+}
+
+.content{
+  color: whitesmoke;
+  height: 5vh;
+  padding: 1vh;
+  margin: 2vh;
+  background-color: rgb(130,42,42);
+  font-size: 1.3vw;
+  margin-left: 4vw;
+}
+
+.tags{
+  margin-left: 4vw;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  color: white;
+}
+
+.details{
+  margin-top: -3.5vh;
+  margin-left: 6.5vw;
+  color: white;
+  background-color: transparent;
+}
+
+
+.edit{
+  position: absolute;
+  background-color: white;
+  color: rgb(130,42,42);
+  margin-left: 14vw;
+  border-radius: 2vh;
+  border: none;
+  width: 12vw;
+  height: 5vh;
+  font-size: 3vh;
+  font-family: 'Raleway', sans-serif;
+
+}
+.edit:hover{
+  background-color: rgb(130,42,42);
+  color: white;
+ }
+
+.editIcon{
+ position: absolute;
+ margin-left: -2vw;
+}

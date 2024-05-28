@@ -1,0 +1,86 @@
+.userimage{
+  width: 4vw;
+  height: 8vh;
+  margin-left: 2vw;
+  margin-top: 2vh;
+  border-radius: 50px 50px 50px 50px;
+}
+
+.userDetails{
+  position: fixed;
+  margin-left: 80vw;
+  display: flex;
+  z-index: 1;
+}
+
+
+
+.mainCard{
+  margin-top: -20vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.heading{
+  color: black;
+  position: absolute;
+  margin-left: 23vw;
+  font-size: 8vh;
+  letter-spacing: 4px;
+  margin-top: 20vh;
+  font-family: 'Belanosima', sans-serif;
+  font-family: 'Cinzel', serif;
+}
+
+.hotel{
+  position: relative;
+  height: 30vh;
+  margin-top: 25vh;
+  margin-left: -115vh;
+  transform: rotate(-5deg);
+}
+
+
+
+  .image{
+    width: 25vw;
+    height: 30vh;
+  }
+  .restaurantCard{
+    margin-left: 5vw;
+    text-align: center;
+    margin-top: 5vh;
+    width: 26vw;
+    height: 40vh;
+    box-shadow: 0 0 3em -1em black;
+    border-radius: 2vh;
+    transition: all 0.3s;
+
+
+}
+.restaurantCard:hover{
+    box-shadow: 0 0 5em -1em black;
+    transform: scale(1.1);
+
+}
+.image{
+  border-radius: 2vh;
+  margin-top: 1vh;
+}
+.deleteButton{
+  margin-top:-6vh;
+  float: right;
+  border: none;
+  background-color: transparent;
+  width: 3vw;
+  height: 5vh;
+  
+}
+
+.message{
+  font-family: 'Cinzel', serif;
+  font-size: 7vh;
+  color: rgb(130,42,42);
+  text-align: center;
+}
+

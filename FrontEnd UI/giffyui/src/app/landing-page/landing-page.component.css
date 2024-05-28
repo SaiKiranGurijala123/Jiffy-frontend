@@ -1,0 +1,251 @@
+
+
+.image{
+  width: 50vw;
+  height: 100vh;
+  margin-top: 2vh;
+  margin-left: 49vw;
+
+
+ }
+
+ .addRestaurantButton{
+   position: absolute;
+   margin-left: 59vw;
+   top: 30px;
+
+ }
+
+ .logInButton{
+   position: absolute;
+   margin-left: 78vw;
+   top: 30px;
+ }
+
+ .signUpButton{
+   position: absolute;
+   margin-left: 85vw;
+   top: 30px;
+ }
+
+ a{
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   color: white;
+   text-decoration: none;
+   font-size: medium;
+   font-size:1.5vw;
+   font-weight: 800;
+
+ }
+
+ .resto{
+ background-color: transparent;
+ }
+
+ .log{
+ background-color: transparent;
+ }
+
+ .sign{
+ background-color: transparent;
+ }
+
+
+ h1{
+   position: absolute;
+   left: 10vw;
+   top: 30vh;
+   font-size:500%;
+   color:rgb(241, 238, 234);
+   font-family: 'Berkshire Swash', cursive;
+
+ }
+
+ .tagline{
+
+   margin-left: 10vw;
+   margin-top: -75vh;
+   font-family: 'Lobster', cursive;
+   font-size: 40px;
+   line-height: 70px;
+   color: rgb(14, 13, 13);
+   letter-spacing: 2px;
+   background-color: transparent;
+ }
+
+ .bikeLogo{
+   width: 5vw;
+   margin-top: -17vh;
+   margin-left: 48vw;
+
+ }
+
+
+ .regform{
+   position: absolute;
+   top: 20vh;
+   left: 38vw;
+   border: 2px solid white;
+   width: 30vw;
+   text-align: center;
+   background-color: aliceblue;
+   height: 50vh;
+
+ }
+
+
+ .lower{
+   background-color: rgb(59, 58, 58);
+   margin-top: 20vh;
+ }
+
+
+ .subHeading{
+ padding-top: 5vh;
+ margin-left: 38vw;
+ font-family: 'Lobster', cursive;
+ font-size: 30px;
+ color: black;
+ margin-top: 10vh;
+ }
+
+ .locationbox{
+   border: 2px solid black;
+   width: 200px;
+   height: 80px;
+ }
+
+
+ .locDiv{
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-between;
+ margin-left: 1vw;
+ }
+
+ .locationCard{
+ width: 20vw;
+ margin-top: 10vh;
+
+ }
+
+ .locBtn{
+ padding: 4vh;
+ }
+
+
+ .footerDiv{
+ margin-top: 10vh;
+ background-color: rgb(59, 58, 58);
+ }
+
+ .baseline{
+   font-family: 'Lobster',cursive;
+   font-size: 25px;
+   margin-top: 2vh;
+   color: aliceblue;
+ }
+
+ .socialDiv{
+ margin-right: 760px;
+ }
+
+ h5{
+  font-size: medium;
+   color: rgb(194, 193, 193) ;
+ }
+
+ p{
+ font-size: medium;
+ color: aliceblue;
+ }
+
+ .site{
+ background-color:rgb(136, 135, 135);
+
+ }
+
+ ul.social-network {
+   list-style: none;
+   display: inline;
+   margin-left:0 !important;
+   padding: 0;
+   }
+
+   ul.social-network li {
+   display: inline;
+   margin: 0 5px;
+   }
+
+
+   /* footer social icons */
+   .social-network a.icoRss:hover {
+   background-color: #F56505;
+   }
+   .social-network a.icoFacebook:hover {
+   background-color:#3B5998;
+   }
+   .social-network a.icoTwitter:hover {
+   background-color:#33ccff;
+   }
+   .social-network a.icoGoogle:hover {
+   background-color:#BD3518;
+   }
+   .social-network a.icoVimeo:hover {
+   background-color:#0590B8;
+   }
+   .social-network a.icoInstagram:hover {
+   background-color:#ac2bac;
+   }
+   .social-network a.icoRss:hover i, .social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i,
+   .social-network a.icoGoogle:hover i, .social-network a.icoVimeo:hover i, .social-network a.icoInstagram:hover i {
+   color:#fff;
+   }
+   a.socialIcon:hover, .socialHoverClass {
+   color:#44BCDD;
+   }
+
+   .social-circle li a {
+   display:inline-block;
+   position:relative;
+   margin:0 auto 0 auto;
+   -moz-border-radius:50%;
+   -webkit-border-radius:50%;
+   border-radius:50%;
+   text-align:center;
+   width: 50px;
+   height: 50px;
+   font-size:20px;
+   }
+   .social-circle li i {
+   margin:0;
+   line-height:50px;
+   text-align: center;
+   }
+
+   .social-circle li a:hover i, .triggeredHover {
+   -moz-transform: rotate(360deg);
+   -webkit-transform: rotate(360deg);
+   -ms--transform: rotate(360deg);
+   transform: rotate(360deg);
+   -webkit-transition: all 0.2s;
+   -moz-transition: all 0.2s;
+   -o-transition: all 0.2s;
+   -ms-transition: all 0.2s;
+   transition: all 0.2s;
+   }
+   .social-circle i {
+   color: #fff;
+   -webkit-transition: all 0.8s;
+   -moz-transition: all 0.8s;
+   -o-transition: all 0.8s;
+   -ms-transition: all 0.8s;
+   transition: all 0.8s;
+   }
+
+   a {
+   background-color: #D3D3D3;
+ }
+
+
+

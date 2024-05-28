@@ -1,0 +1,51 @@
+
+ <body>
+    <div >
+        <form class="formbox" [formGroup]="register" (ngSubmit)="onSubmit()">
+            <h2>Merchant Registration</h2>
+            <div class="inputbox">
+                <mat-icon style="color: black;position:absolute;margin-left: -2vw ;margin-top: 5vh;">email</mat-icon>
+                <input type="text" placeholder="Email ID"  formControlName="emailId" >
+                <div class="errDiv" *ngIf="emailId?.invalid && (emailId?.dirty || emailId?.touched)">
+                    <div class="errmessage" *ngIf="emailId?.errors?.['required']"> Email ID is required</div>
+                    <div class="errmessage" *ngIf="emailId?.errors?.['pattern']"> Enter valid Email ID</div>
+                </div>
+            </div>
+
+
+            <div>
+                <mat-icon style="color: black;position:absolute;margin-left: -2vw ;margin-top: 5vh;">person</mat-icon>
+                <input type="text" placeholder="Merchant Name" formControlName="merchantName">
+                <div class="errDiv" *ngIf="merchantName?.invalid && (merchantName?.dirty ||merchantName?.touched)">
+                    <div class="errmessage" *ngIf="merchantName?.errors?.['required']">Name Is Required</div>
+                    <div class="errmessage" *ngIf="merchantName?.errors?.['minlength']">Name length should be 3 letters min</div>
+                    <div class="errmessage" *ngIf="merchantName?.errors?.['pattern']">Provide Valid User Name.</div>
+
+
+
+                </div>
+            </div>
+
+            <div >
+                <mat-icon style="color: black;position:absolute;margin-left: -2vw ;margin-top: 5vh;">lock</mat-icon>
+                <input type="password" placeholder="Password" formControlName="password">
+                <div class="errDiv" *ngIf="password?.invalid && (password?.dirty ||password?.touched)">
+                    <div class="errmessage" *ngIf="password?.errors?.['required']"> Password is required</div>
+                    <div class="errmessage" *ngIf="password?.errors?.['pattern']"> Password must contain more <br> than 8 characters, 1 upper case letter, <br> and 1 special character</div>
+
+                </div>
+            </div>
+
+
+            <button type="submit" [disabled]="!register.valid">Submit</button>
+
+            <p class="prompt">  Already a user ?</p><a routerLink="/merchant-login">Click Here</a>
+
+        </form>
+    </div>
+    <img class="image" src="assets\BackgroundImages\homemade-fresh-stew-coconut-plates-copy-space (1).jpg" alt="">
+
+
+</body>
+<!-- <p>new one</p> -->
+

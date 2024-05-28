@@ -1,0 +1,81 @@
+<div class="userDetails">
+  <img class="userimage" [src]="user.imageUrl" alt="image not found">
+  <p style="color: black; margin-top:8vh ;  margin-left: 1vw;">Hi, {{user.name}}</p>
+</div>
+<div>
+
+<div  class="container mt-3 mt-md-5">
+  <h1 style="color: black; margin-top: 10vh;    font-family: 'Belanosima', sans-serif;
+  font-family: 'Cinzel', serif;" class="text-charcoal hidden-md-up">Past Orders</h1>
+  <div class="row">
+    <div class="col-12" *ngFor="let item of allOrder">
+      <div class="list-group mb-5">
+        <div class="list-group-item p-3 bg-snow" style="position: relative;">
+          <div class="row w-100 no-gutters">
+            <div class="col-6 col-md">
+              <h6 class="text-charcoal mb-0 w-100" style="font-size: medium;">Order Id</h6>
+              <p href="" class="text-pebble mb-0 w-100 mb-2 mb-md-0">{{item.orderId}}</p>
+            </div>
+            <div class="col-6 col-md">
+              <h6 class="text-charcoal mb-0 w-100" style="font-size: medium;">Date</h6>
+              <p class="text-pebble mb-0 w-100 mb-2 mb-md-0">{{item.date}}</p>
+            </div>
+            <div class="col-6 col-md">
+              <h6 class="text-charcoal mb-0 w-100" style="font-size: medium;">Item Total</h6>
+              <p class="text-pebble mb-0 w-100 mb-2 mb-md-0">&#8377;{{item.totalPrice}}</p>
+            </div>
+            <div class="col-6 col-md">
+              <h6 class="text-charcoal mb-0 w-100" style="font-size: medium;">Deliver To</h6>
+              <p class="text-pebble mb-0 w-100 mb-2 mb-md-0">{{user.name}}</p>
+            </div>
+
+
+        </div>
+        <div class="list-group-item p-3 bg-white">
+          <div class="row no-gutters">
+            <div style="display: flex;"  class="col-12 col-md-9 pr-0 pr-md-3">
+              <div class="alert p-2 alert-success w-100 mb-0">
+                <h6 class="text-green mb-0" style="font-size: medium;"><b>Address</b></h6>
+                <p class="text-green hidden-sm-down mb-0">{{user.address}}</p>
+              </div>
+              <div>
+                <button class="deleteOrder" (click)="deleteOrder(item.orderId)">Delete Order</button>
+              </div>
+            </div>
+
+            <div class="row no-gutters mt-3">
+              <div class="col-3 col-md-1">
+              </div>
+              <div >
+                <div style="margin-top: 5vh;" *ngFor="let dish of item.dishes" >
+                  <img style="margin-bottom: -3vh;" class="dishImage" [src]="dish.imageUrl" alt="">
+                  <div style="margin-left: 15vw;margin-top: -23vh;">
+                    <hr>
+                    <h3>Name: {{dish.name}}</h3>
+                    <h3>Category: {{dish.category}}</h3>
+                    <h3>Cuisine: {{dish.cuisine}}</h3>
+                    <h3>Price: &#8377;{{dish.price}}</h3>
+                  </div>
+
+
+
+                </div >
+
+              </div>
+
+
+
+            </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+

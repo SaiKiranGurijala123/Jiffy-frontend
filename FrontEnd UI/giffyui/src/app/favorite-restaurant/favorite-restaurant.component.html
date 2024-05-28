@@ -1,0 +1,21 @@
+<div class="userDetails">
+  <img class="userimage" [src]="userData.imageUrl" alt="image not found">
+  <p style="color: black; margin-top:8vh ;  margin-left: 1vw;">Hi, {{userData.name}}</p>
+</div>
+<div>
+
+
+<!-- <img  class="mainimage" src="/assets/img/wepik-export-20230704031005tJrn.jpeg" alt=""> -->
+ <h1 class="heading">Favorite Restaurants...</h1>
+ <img  class="hotel" src="/assets/img/hotelimage.webp" alt="">
+
+  <div class="mainCard" *ngIf="displayMessage(); else emptyBlock">
+
+<div class="restaurantCard" *ngFor="let restaurant of favResturantList">
+  <img class="image" [src]="restaurant.imageUrl" alt="image not found">
+    <p style=" margin-top: 3vh; font-weight: 500;font-size: 3vh; color: black;    font-family: 'Cinzel', serif;">{{restaurant.name}}</p>
+    <button class="deleteButton" (click)="deleteRestaurant(restaurant.name)"><mat-icon style="color: black;">delete</mat-icon></button >
+
+</div>
+</div>
+<ng-template #emptyBlock><h1 class="message">Oops! You have no favourite restaurant 😞</h1></ng-template>

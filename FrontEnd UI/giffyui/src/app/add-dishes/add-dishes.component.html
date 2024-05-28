@@ -1,0 +1,80 @@
+<h2 class="merchantName">Hello, {{merchantdetails.merchantName}}</h2>
+
+<h2 class="headline">Add Dishes To Your Restaurant...</h2>
+<div *ngFor="let restaurant of merchantdetails.restaurants">
+  <!-- <div>
+      <img class="images" [src]="restaurant.imageUrl" alt={{dish.name}}>
+
+  </div> -->
+  <form [formGroup]="addDishForm" (ngSubmit)="addDish(restaurant.name)">
+
+      <div   class="formbox"  *ngFor="let restaurant of merchantdetails.restaurants">
+
+          <h2 class="heading">Dish Details</h2>
+
+          <div>
+              <p>Dish Name :</p>
+              <input type="text" formControlName="name">
+              <div  class="errordiv" *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+                  <div class="errors" *ngIf="name?.errors?.['required']">Dish Name required</div>
+                  <div class="errors" *ngIf="name?.errors?.['pattern']">Provide Valid Dish Name</div>
+
+              </div>
+          </div>
+
+          <div >
+              <p>Select Cuisine :</p>
+              <select formControlName="cuisine">
+                  <option value="select" disabled selected hidden>Select cuisine</option>
+                  <option  *ngFor="let cuisine of cuisines" [value]="cuisine">{{cuisine}}</option>
+              </select>
+              <div  class="errordiv" *ngIf="cuisine?.invalid && (cuisine?.dirty || cuisine?.touched)">
+                <div class="errors" *ngIf="cuisine?.errors?.['required']">Select Any Cuisine</div>
+            </div>
+          </div>
+          <div >
+              <p>Dish Price :</p>
+              <input type="number" formControlName="price">
+              <div  class="errordiv" *ngIf="price?.invalid && (price?.dirty || price?.touched)">
+                  <div class="errors" *ngIf="price?.errors?.['required']">price required</div>
+                  <div class="errors" *ngIf="price?.errors?.['pattern']">price format not allowed</div>
+              </div>
+          </div>
+
+          <div  >
+              <p>Select category :</p>
+              <select  formControlName="category" >
+                  <option value="select" disabled selected hidden>Select category</option>
+                  <option  *ngFor="let category of categories" [value]="category">{{category}}</option>
+              </select>
+              <div  class="errordiv" *ngIf="category?.invalid && (category?.dirty || category?.touched)">
+                <div class="errors" *ngIf="category?.errors?.['required']">Category is required</div>
+            </div>
+          </div>
+
+          <p >Upload Image :</p>
+          <div  >
+
+              <div style="margin-left: 10vw;">
+                  <input  (change)="converter($event)" type="file" formControlName="imageUrl" name="imageUrl" class="text"/>
+              </div>
+
+          </div>
+
+
+          <div >
+              <p>Veg / Non-Veg :</p>
+              <select   formControlName="type" required>
+                  <option *ngFor="let type of foodType" [value]="type" >{{type}}</option>
+              </select>
+              <div  class="errordiv" *ngIf="type?.invalid && (type?.dirty || type?.touched)">
+                <div class="errors" *ngIf="type?.errors?.['required']">Type is required</div>
+            </div>
+          </div>
+
+
+          <button class="subButton"  >Submit</button>
+      </div>
+  </form>
+
+</div >

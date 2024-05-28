@@ -1,0 +1,65 @@
+body{
+    position: absolute;
+
+    width: 100%;
+}
+
+.formbox{
+    position: absolute;
+    width: 25vw;
+    height: 55vh;
+    border-radius: 20px;
+    margin-left: 60vw;
+    text-align: center;
+    margin-top: 30vh;
+    background-color: transparent;
+    box-shadow:  0 0 4em -1em rgb(8, 8, 8);
+    border: 2px solid black;
+
+
+}
+input{
+    margin-top: 5vh;
+    width: 200px;
+    border: none;
+    color: black;
+    border-bottom: 2px solid rgb(5, 5, 5);
+    background:transparent;
+    outline: none;
+    font-size: medium;
+}
+
+.loginButton{
+    margin-top: 50px;
+    width: 10vw;
+    border-radius: 1vh;
+    height: 7vh;
+    outline: none;
+    border: none;
+    font-size: medium;
+    color: black;
+
+}
+
+.loginButton:hover{
+
+ color: white;
+  background-color:rgb(130,42,42);
+}
+
+.errmessage{
+    color: red;
+    font-size: medium;
+}
+.image{
+    width: 100vw;
+    height: 100vh;
+    margin-top: 2vh;
+
+}
+h2{
+    color: rgb(15, 15, 15);
+    margin-top: 30px;
+    font-family: 'Belanosima', sans-serif;
+    font-family: 'Cinzel', serif;
+}

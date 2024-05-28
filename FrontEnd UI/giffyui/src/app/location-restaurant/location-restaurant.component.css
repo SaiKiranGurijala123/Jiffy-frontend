@@ -1,0 +1,53 @@
+
+.maindiv{
+  margin-left: 8vw;
+  margin-top: 12vh;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.oneLocationCard{
+
+ text-align: center;
+ margin-top: 10vh;
+ margin-left: 4vw;
+ width: 30vw;
+ height: 40vh;
+ background-color: transparent;
+ box-shadow: 0 0 3em -1em black;
+ border-radius: 20px;
+ transition: all 0.3s;
+
+}
+
+.oneLocationCard:hover{
+  box-shadow: 0 0 5em -1em black;
+  transform: scale(1.1);
+
+}
+
+
+
+.message{
+  font-family: 'Belanosima', sans-serif;
+  line-height: 5vh;
+  width: 100%;
+  margin-left: 1vw;
+  margin-top: 18vh;
+ font-style: italic;
+  font-weight: 900;
+  background: -webkit-linear-gradient(#051df4, #67daf4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.image{
+  margin-top: 6vh;
+  width: 25vw;
+  height: 28vh;
+  border-radius: 3vh;
+  margin-left: -10vw;
+}
+
+

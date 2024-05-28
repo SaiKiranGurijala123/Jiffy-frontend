@@ -1,0 +1,84 @@
+<body>
+    <div class="bodydiv">
+        <form class="formbox" [formGroup]="userRegister" (ngSubmit)="onSubmit()">
+            <h2 class="title">User Registration</h2>
+            <div class="inputbox">
+                <!-- <img style="height: 3vh;position: absolute;margin-top: 5vh;margin-left: -2vw;" src="assets\icons8-email-48.png" alt=""> -->
+                <mat-icon style="color: black;position:absolute;margin-left: -4vw ;margin-top: 5vh;">email</mat-icon>
+
+                <input class="inData" type="text" placeholder="Email ID"  formControlName="emailId" >
+                <div *ngIf="emailId?.invalid && (emailId?.dirty || emailId?.touched)">
+                    <div class="errmessage" *ngIf="emailId?.errors?.['required']"> Email ID is required</div>
+                    <div class="errmessage" *ngIf="emailId?.errors?.['pattern']"> Enter valid Email ID</div>
+                </div>
+
+            </div>
+            <div>
+                <mat-icon style="color: black;position:absolute;margin-left: -4vw ;margin-top: 5vh;">person</mat-icon>
+
+                <input class="inData"  type="text" placeholder="Name" formControlName="name">
+                <div *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+                    <div class="errmessage" *ngIf="name?.errors?.['required']">Name is required</div>
+                </div>
+            </div>
+            <div>
+                <mat-icon style="color: black;position:absolute;margin-left: -4vw ;margin-top: 5vh;">phone</mat-icon>
+
+                <input class="inData"  type="number" placeholder="Contact No" formControlName="phoneNo">
+                <div *ngIf="phoneNo?.invalid && (phoneNo?.dirty || phoneNo?.touched)">
+                    <div class="errmessage" *ngIf="phoneNo?.errors?.['required']">Phone number required</div>
+                    <div class="errmessage" *ngIf="phoneNo?.errors?.['pattern']"> Enter valid phone number</div>
+                </div>
+            </div>
+
+           
+
+            <div>
+                <mat-icon style="color: black;position:absolute;margin-left: -4vw ;margin-top: 5vh;">location_on</mat-icon>
+
+                <input class="inData"  type="text" placeholder="Address" formControlName="address">
+                <div *ngIf="address?.invalid && (address?.dirty || address?.touched)">
+                    <div class="errmessage" *ngIf="address?.errors?.['required']">Address is required</div>
+                </div>
+            </div>
+
+            
+            <div>
+                <mat-icon style="color: black;position:absolute;margin-left: -4vw ;margin-top: 5vh;">lock</mat-icon>
+
+                <input class="inData"  type="password" placeholder="Password" formControlName="password">
+                <div *ngIf="password?.invalid && (password?.dirty ||password?.touched)">
+                    <div class="errmessage" *ngIf="password?.errors?.['required']"> Password is required</div>
+                    <div class="errmessage" *ngIf="password?.errors?.['minLength']">Password length min should be 8 letters</div>
+                </div>
+            </div>
+
+            <div>
+              <mat-icon style="color: black;position:absolute;margin-left: -16.2vw ;margin-top: 3.5vh; ">location_city</mat-icon>
+              <div>
+                <select style="background-color: white; width: 24.5vw; margin-top: 4vh; height: 3vh; border-bottom: 2px solid black;" class="inputcity" placeholder="Select City" formControlName="city">
+                  <option value="" disabled >Please select a city</option>
+                  <option *ngFor="let location of locations" [value]="location">{{ location }}</option>
+                </select>
+                <div *ngIf="city?.invalid && (city?.dirty || city?.touched)">
+                  <div class="errmessage" *ngIf="city?.errors?.['required']">City is required</div>
+                
+              </div>
+              </div>
+              </div>
+
+
+
+            <div class="uploadImage">
+                <mat-icon style="position: absolute; margin-left: -7vw; margin-top: 1.3vh;">upload</mat-icon>
+              <input id="file" (change)="converter($event)" type="file" placeholder="Password" formControlName="imageUrl" name="imageUrl" class="text"/>
+              <label for="file" >upload a photo</label>
+          </div>
+
+            <button class="regButton" type="submit" [disabled]="!userRegister.valid">Submit</button>
+            <p class="prompt">  Already a user ?</p><a routerLink="/user-logIn">Click here</a>
+        </form>
+    </div>
+    <img class="image" src="assets\BackgroundImages\view-food-assortment-with-copy-space (1).jpg" alt=""> </body>
+
+

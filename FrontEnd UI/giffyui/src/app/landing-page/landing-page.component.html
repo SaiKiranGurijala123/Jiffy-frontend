@@ -1,0 +1,50 @@
+
+<div style="">
+  <img class="image" src="assets\BackgroundImages\wepik-export-20230707082035Oc6U.png" alt="">
+
+
+
+<div class="subTitle">
+        <h2 class="tagline">Discover Lip-Smacking Good Food From <br> The Best Restaurants In India
+          <br>Place your order in a jiffy....</h2>
+          <img class="bikeLogo" src="assets\BackgroundImages\scooter-bike.png" alt="">
+    </div>
+    <!-- UserLogInForm -->
+
+
+
+
+</div>
+<div style="background-color: white;">
+<div class="popular">
+
+<h2 class="subHeading" >Popular Locations in India</h2>
+<div class="locDiv">
+<div *ngFor="let location of locations" >
+
+<mat-card class="locationCard">
+  <button class="locBtn" mat-raised-button color="warn" routerLink="/locationRestaurant/{{location}}">
+  <mat-card-content>{{location}}</mat-card-content>
+  <mat-icon style="position: absolute;margin-left: 18vw;">keyboard_arrow_right</mat-icon>
+  <mat-icon style="position: absolute;margin-left: -15vw;margin-top: -1vh;">location_on</mat-icon>
+</button>
+</mat-card>
+
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

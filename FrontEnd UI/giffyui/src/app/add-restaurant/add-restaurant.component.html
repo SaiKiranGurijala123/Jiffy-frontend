@@ -1,0 +1,40 @@
+<h2 class="merchantName">Hello, {{merchantRestaurants.merchantName}}</h2>
+
+<h2 class="headline">Unlock new opportunities, add your restaurant!</h2>
+
+<div >
+<form [formGroup]="addRestaurantForm"  (ngSubmit)="addrestaurantToList()" >
+<div class="formbox" >
+    <h2 class= formtitle>Restaurant Details</h2>
+    <div>
+        <p style="margin-bottom: -5vh; margin-right: 14vw;">Restaurant Name</p>
+        <input style="margin-left: -3vw;" type="text" placeholder="Restaurant Name" formControlName="name">
+        <div *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+            <div *ngIf="name?.errors?.['required']">Restaurant Name required</div>
+        </div>
+    </div>
+
+    <!-- <div>
+        <input type="text"  placeholder="Location" formControlName="location">
+    </div> -->
+
+
+    <div class="selectCity" >
+        <p  style="margin-bottom: -0vh;margin-right: 17vw;">Select City</p>
+        <select style="color: black; border: 2px solid black;" class="inputcity" id="city" formControlName="location" required>
+            <option value="" disabled >Please select a city</option>
+            <option style="color: black;"  *ngFor="let location of locations" [value]="location">{{ location }}</option>
+          </select><br>
+          <div *ngIf="location?.invalid && (location?.dirty || location?.touched)">
+            <div style="color: aliceblue;" *ngIf="location?.errors?.['required']">Please select location Name required</div>
+        </div>
+    </div>
+    <div class="selectFile">
+        <p style="margin-bottom: -5vh;margin-right: 13vw;">Select Restaurant Image</p>
+        <input  style="margin-left: 2.5vw;" (change)="converter($event)" type="file"  formControlName="imageUrl" name="imageUrl" class="text"/>
+    </div>
+    <button class="subButton" type="submit" [disabled]="!addRestaurantForm.valid">Submit</button>
+</div>
+</form>
+
+</div>

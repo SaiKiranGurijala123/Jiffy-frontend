@@ -1,0 +1,21 @@
+<div class="userDetails">
+  <img class="userimage" [src]="userData.imageUrl" alt="image not found">
+  <p style="color: black; margin-top:8vh ;  margin-left: 1vw;">Hi, {{userData.name}}</p>
+</div>
+<div *ngIf="favDish">
+  <h1  class="heading">Favorite Dishes...</h1>
+
+<div>
+  
+</div>
+    <div *ngIf="displayMessage(); else emptyBlock">
+    <div class="mainCard">
+    <div class="dishCard"  *ngFor="let dish of favouriteDishList">
+    <img class="image" [src]="dish.imageUrl" alt="image not found">
+    <h1 style=" margin-top: 3vh; color: black;">{{dish.name}}</h1>
+    <mat-icon class="deleteButton" (click)="deleteDish(dish.name)">delete</mat-icon>
+</div>
+
+</div>
+</div>
+<ng-template #emptyBlock><h1 class="message">Oops! You have no favourite dishes 😥</h1></ng-template>

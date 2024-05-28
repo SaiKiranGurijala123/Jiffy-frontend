@@ -1,0 +1,36 @@
+<h2 class="merchantName">Hello, {{merchant.merchantName}}</h2>
+
+<div class="bodydiv">
+  <form class="form-horizontal formbox" [formGroup]="updatedMerchant" (ngSubmit)="editMerchant()">
+    <h2 style="margin-top: 8vh; font-family: 'Belanosima', sans-serif; font-family: 'Cinzel', serif; font-size: 2vw; color: black;">Edit Merchant Info</h2>
+    <div>
+      <mat-icon style="margin-left: -16vw; margin-top: 3vh; position: absolute; color: black;">account_circle</mat-icon>
+      <label class="label">Name</label>
+      <div>
+        <input type="text" [placeholder]="merchant?.merchantName" formControlName="merchantName">
+      </div>
+    </div>
+    <div class="inputbox">
+      <mat-icon style="margin-left: -16vw; margin-top: 3vh; position: absolute; color: black;">email</mat-icon>
+      <label class="label">Email ID</label>
+      <div>
+        <input type="text" [placeholder]="merchant?.emailId" formControlName="emailId">
+        <div *ngIf="emailId?.invalid && (emailId?.dirty || emailId?.touched)">
+          <div class="errmessage" *ngIf="emailId?.errors?.['pattern']">Enter valid Email ID</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <mat-icon style="margin-left: -16vw; margin-top: 3vh; position: absolute; color: black;">location_on</mat-icon>
+      <label class="label">Address</label>
+      <div>
+        <select class="inputcity" id="city" formControlName="location">
+          <option value="" disabled>{{ merchant?.location }}</option>
+          <option *ngFor="let location of locations" [value]="location">{{ location }}</option>
+        </select>
+      </div>
+    </div>
+    <button class="submit" type="submit">Update</button>
+  </form>
+</div>
+

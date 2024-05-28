@@ -1,0 +1,90 @@
+<div class="userDetails">
+  <img class="userimage" [src]="userData.imageUrl" alt="image not found">
+  <p style="color: black; margin-top:5vh ;  margin-left: 1vw;">Hi, {{userData.name}}</p>
+</div>
+<div>
+
+<body style="background-color:  rgb(251, 250, 250); height: auto;">
+
+
+  <div >
+
+  <!-- <img class="back" src="/assets/img/wepik-export-202307030831502GGT.jpeg" alt=""> -->
+<div class="searchBar">
+         <!-- <h1 class="tagline" style="">Order Food In A Jiffy</h1> -->
+      <input type="text" name="Search" placeholder="Search For Restaurants..." [(ngModel)]="searchText">
+      <mat-icon style=" color: black;" class="searchIcon">search</mat-icon>
+    </div>
+  </div>
+  <div class="restaurantList">
+    <div  class="textFeild">
+      <h2 style="position: absolute;margin-left: 2vw;margin-top: -0.5vh;  font-family: 'Belanosima', sans-serif;
+      font-family: 'Cinzel', serif; font-size: large;">{{userData.city}}</h2>
+      <mat-icon class="locationIcon">location_on</mat-icon>
+
+
+    </div>
+  </div>
+
+<div >
+  <div class="topRestoutantsTitle" >
+    <p style="  font-family: 'Belanosima', sans-serif;
+    font-family: 'Cinzel', serif;">Top Restaurants For You</p >
+  </div>
+  <hr style="width: 90vw; margin-left: 4vw;">
+
+  <div class="imageSlider" >
+        <ng-image-slider [images]="imgCollection" #nav></ng-image-slider>
+  </div>
+
+  <div class="restaurantTagLine">
+    <hr style="width: 92vw;margin-left: -2vw;">
+    <p style="  font-family: 'Belanosima', sans-serif;
+    font-family: 'Cinzel', serif;">Delivery Restaurants </p>
+    <hr style="width: 92vw; margin-left: -2vw;">
+
+  </div>
+
+
+<div class="dishCard" style="margin-top: -3vh;">
+    <div class="dishData" *ngFor="let dish of allDishes">
+        <p>{{dish.name}}</p>
+        <img class="images" [src]="dish.imageUrl" alt={{dish.name}}>
+
+    </div>
+
+
+
+    <div class="restaurantData" >
+        <tr *ngFor="let restaurant of restaurantList  | filter:searchText ">
+          <div *ngIf="restaurant.status==true">
+
+            <a routerLink="/dish-menu/{{restaurant.name}}" [state]=restaurant>
+                <div class="restaurantCard">
+                    <img class="image" [src]="restaurant.imageUrl" alt="image not found">
+
+                    <p class="restaurantName">{{restaurant.name}}</p>
+                </div>
+            </a>
+            <mat-icon class="favButton" (click)="addrestaurantToFev(restaurant)">favorite</mat-icon>
+
+
+          </div>
+
+        </tr>
+
+
+    </div>
+
+</div>
+</div>
+</body>
+
+
+
+
+
+
+
+
+

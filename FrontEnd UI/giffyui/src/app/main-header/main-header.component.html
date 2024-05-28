@@ -1,0 +1,66 @@
+<mat-sidenav-container  class="sidenav-container" >
+  <mat-sidenav #drawer class="sidenav" >
+    <div style="display: flex; margin-top: 6vh;margin-left: 3vw;">
+  
+      <div>
+        <h1 style="color: rgb(130,42,42); font-family: 'Berkshire Swash', cursive;letter-spacing: 3px;" > JIffy </h1>
+        <img class="jiffyLogo" src="assets\Icon\fork and spoon 2.png" >
+      </div>
+    </div>
+
+    <mat-nav-list style="margin-top: 5vh;">
+      <button style="font-size: larger;"  class="navButton1" *ngIf="LogInButton" routerLink="/user-logIn"><mat-icon style="position: absolute;margin-left: -7vw;margin-top: -0.5vh;">person</mat-icon>Login</button>
+      <button style="font-size: larger;"  class="navButton1"  *ngIf="LogInButton" routerLink="/user-register"><mat-icon style="position: absolute;margin-left: -6.5vw;margin-top: -0.5vh;">person_add</mat-icon >Sign Up</button>
+      <button style="font-size: larger;"  class="navButton1"  *ngIf="LogInButton"routerLink="/merchant-register"><mat-icon style="position: absolute;margin-left: -6vw;margin-top: -0.5vh;">person_add</mat-icon>Merchant</button>
+
+      
+      <button class="navButton1" *ngIf="userButton" routerLink="/view-profile"><mat-icon style="margin-left: -6vw;margin-bottom: -1vh;position: absolute;">account_circle</mat-icon>Profile</button>
+      <button class="navButton1" *ngIf="userButton" routerLink="/fav-restaurant" ><mat-icon style="position: absolute ;margin-left:-2.7vw;margin-top: -0.5vh;">favorite</mat-icon> Favorite Restaurant</button>
+      <button style="padding: 1vh;" class="navButton1" *ngIf="userButton" routerLink="/fav-dish" ><mat-icon style="position: absolute ;margin-left:-3.6vw;margin-top: -0.5vh;">favorite</mat-icon>  Favorite Dishes</button>
+      <button class="navButton1" *ngIf="userButton" routerLink="/order-History" ><mat-icon style="margin-bottom: -1vh;position: absolute;margin-left: -4.1vw;">history</mat-icon> Order History</button>
+      <button (click)="logout()" class="navButton1"*ngIf="exitButton" ><mat-icon style="margin-bottom:-0.5vh; margin-left: -5.5vw;position: absolute;">exit_to_app</mat-icon>Log Out</button>
+      <button (click)="logout()" class="navButton1"*ngIf="userButton" ><mat-icon style="margin-bottom:-0.5vh; margin-left: -5.3vw;position: absolute;">exit_to_app</mat-icon>Log Out</button>
+      <button class="navButton1" *ngIf="mercahntButton" routerLink="/add-dishes"><mat-icon style="margin-left: -3vw;margin-bottom: -1vh;position: absolute;"> fastfood</mat-icon>Add Dishes</button>
+      <!-- <button class="navButton1" *ngIf="mercahntButton" routerLink="/fav-restaurant" (click)="deleteRestaurant(restaurant.name)">Delete Restaurant</button> -->
+
+      <button (click)="logout()" class="navButton1"*ngIf="mercahntButton" ><mat-icon style="margin-bottom:-0.5vh; margin-left: -4vw;position: absolute;">exit_to_app</mat-icon>Log Out</button>
+
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar style="position: fixed; height: 13vh; z-index: 1;"  class="mainHeader">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        >
+        <mat-icon aria-label="Side nav toggle icon" style="color: black;">menu</mat-icon>
+      </button>
+
+      <h1 routerLink="/main-menu" class="title" *ngIf="userHome">Jiffy </h1>
+      <h1  routerLink="/get-restaurant" class="title" *ngIf="merchantHome">Jiffy </h1>
+      <h1 routerLink="/home" class="title" *ngIf="LogHome">Jiffy </h1>
+      <h1 class="title" *ngIf="commanHome">Jiffy </h1>
+      
+
+
+      <img  class="logo"  src="assets\Icon\fork and spoon 2.png" alt="">
+
+        <div class="sideButton">
+          <button routerLink="/user-logIn" *ngIf="LogInButton" class="log"><mat-icon style="margin-bottom: -0.5vh ;margin-left:-1vw;">person</mat-icon> Login</button>
+          <button routerLink="/user-register" *ngIf="LogInButton" class="log"> <mat-icon style="margin-bottom: -0.5vh ;margin-left:-1vw;margin-right: 1vw;">person_add</mat-icon>Sign Up</button>
+          <!-- <button onclick="history.back()" *ngIf="!hideButton" style="margin-left:16vh" class="reg">	<mat-icon onclick="history.back()" *ngIf="!hideButton" style="margin-bottom: -0.5vh;">arrow_back_ios</mat-icon>Back</button> -->
+
+        </div>
+
+        <mat-icon onclick="history.back()" *ngIf="!LogInButton" class="reg">keyboard_backspace</mat-icon>
+
+    </mat-toolbar>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+</mat-sidenav-content>
+</mat-sidenav-container>
+
+

@@ -1,0 +1,90 @@
+.userimage{
+  width: 4vw;
+  height: 8vh;
+  margin-left: 2vw;
+  margin-top: 2vh;
+  border-radius: 50px 50px 50px 50px;
+}
+
+.userDetails{
+  position: fixed;
+  margin-left: 80vw;
+  display: flex;
+  z-index: 1;
+}
+
+.mainheader{
+  position: relative;
+  background-image: linear-gradient(to bottom right,white,rgb(240, 159, 10));
+  height: 15vh;
+}
+.jiffyLogo{
+  position: absolute;
+  border-radius: 50%;
+    width: 100px;
+    margin-top: 2vh;
+    margin-left: 4vw;
+}
+.headtitle{
+  font-size: 5vh;
+  font-weight: 600;
+    font-style: italic ;
+    margin-left: 13vw;
+    margin-top: 4vh;
+    position: absolute;
+    background: -webkit-linear-gradient( #F32170, #FF6B08, #EEDD44);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  letter-spacing: 0.5vh;
+}
+.table{
+  margin-top: 10vh;
+  width: 100vw;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  width: 20vw;
+  padding: 5px;
+  text-align: center;
+}
+.mainTittles{
+  height: 5vh;
+  background-color: #f4e982;
+}
+.backGroundimage{
+  width: 100vw;
+}
+.dishImage{
+  width: 10vw;
+  height: 20vh;
+}
+.deleteOrder{
+  position: absolute;
+  width: 10vw;
+  margin-left: 7vw;
+  height: 8vh;
+  border-radius: 1vh;
+  background-color:rgb(130, 42, 42);
+  color: white;
+  border: none;
+
+}
+
+
+/* .Title{
+  color: white;
+  background-color: black;
+  margin-top: 20vh;
+}
+
+
+
+.example-card {
+  max-width: 50vw;
+  margin-top: 80vh;
+  background-color: black;
+} */

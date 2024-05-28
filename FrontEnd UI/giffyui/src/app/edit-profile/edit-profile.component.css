@@ -1,0 +1,104 @@
+.userimages{
+  margin-top: 3vh;
+  margin-left: 3vw;
+  width: 7vw;
+  height: 14vh;
+  border-radius: 100%;
+  border-radius: 1vh;
+  border: 3px solid rgb(130,42,42);
+
+  }
+
+.formbox{
+  
+  border: 2px solid black;
+  border-radius: 20px;
+  width: 48vw;
+  height: 82vh;
+  margin-left: 28vw;
+  margin-top: 30vh;
+  text-align: center;
+  background-color: transparent;
+  box-shadow:  0 0 8em -1em rgb(32, 1, 1);
+}
+.uploadImage{
+  margin-left: 5vw;
+
+}
+
+.label{
+  position: absolute;
+  margin-left: -14vw;
+  margin-top: 3.5vh;
+  font-size: medium;
+  color: black;
+  font-family: 'Raleway', sans-serif;
+}
+
+input{
+    margin-top: 3vh;
+    margin-left: 8vw;
+    border: 1px solid black;
+    background-color: transparent;
+    width: 200px;
+    outline: none;
+    color: black;
+    font-size: medium;
+    font-family: 'Raleway', sans-serif;
+}
+
+.errmessage{
+  color: red;
+}
+
+.submit{
+  margin-top: 5vh;
+  margin-left: 3vw;
+  border: none;
+  background-color: white;
+  color: black;
+  font-size: 1.5vw;
+  height: 6vh;
+  width: 8vw;
+  border-radius:2vh;
+  font-family: 'Raleway', sans-serif;
+}
+  .submit:hover {
+    background-color: rgb(130,42,42);
+    color: white;
+  }
+  .submit:focus-visible{
+      outline-offset: 1px;
+  }
+.form-horizontal{
+  margin-left: -20vw;
+}
+
+select{
+  color: black;
+  margin-left: 8vw;
+}
+
+.formTitle{
+  margin-top: 3vh;
+  font-family: 'Belanosima', sans-serif;
+  font-family: 'Cinzel', serif;
+  font-size: 2vw;
+  color: black;
+  margin-left: -20vw;
+}
+
+.userimage{
+  width: 4vw;
+  height: 8vh;
+  margin-left: 2vw;
+  margin-top: 2vh;
+  border-radius: 50px 50px 50px 50px;
+}
+
+.userDetails{
+  position: fixed;
+  margin-left: 80vw;
+  display: flex;
+  z-index: 1;
+}

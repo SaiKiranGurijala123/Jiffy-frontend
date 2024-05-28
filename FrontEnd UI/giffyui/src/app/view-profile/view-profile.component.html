@@ -1,0 +1,85 @@
+<div class="userDetails">
+  <img class="userimage" [src]="userData.imageUrl" alt="image not found">
+  <p style="color: black; margin-top:8vh ;  margin-left: 1vw;">Hi, {{userData.name}}</p>
+</div>
+<div>
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-actions>
+      </mat-card-actions>
+    </mat-card-title-group>
+  </mat-card-header>
+  
+  <h1 class="title">Account Info</h1>
+
+
+<!-- 
+  <mat-card-content class="bodyCard">
+  
+    <div style="margin-top: 10vh;">
+    <mat-card class="content">
+      <mat-card-subtitle class="tags">
+        <mat-icon  style="margin-left: -3vw;margin-top: -0.3vh;position: absolute; color: white;"> email</mat-icon>
+      Email ID :  <mat-card class="details">  {{userData.emailId}}</mat-card>
+    </mat-card-subtitle>
+    </mat-card>
+
+    <mat-card class="content">
+      <mat-card-subtitle class="tags">
+        <mat-icon  style="margin-left: -3vw;margin-top: -0.3vh;position: absolute; color: white;"> phone</mat-icon>
+      Contact No :<mat-card class="details">  {{userData.phoneNo}}</mat-card>
+    </mat-card-subtitle>
+    </mat-card>
+
+    <mat-card class="content">
+      <mat-card-subtitle class="tags">
+      <mat-icon  style="margin-left: -3vw;margin-top: -0.3vh;position: absolute; color: white;"> location_on</mat-icon>
+      Address :  <mat-card class="details">  {{userData.address}}</mat-card>
+    </mat-card-subtitle>
+    </mat-card>
+
+    <mat-card class="content">
+      <mat-card-subtitle class="tags">
+        <mat-icon style="margin-left: -3vw;margin-top: -0.3vh;position: absolute; color: white;">location_city</mat-icon>
+      City :     <mat-card class="details">{{userData.city}}</mat-card>
+    </mat-card-subtitle>
+    </mat-card>
+  </div>
+
+
+  </mat-card-content> -->
+  <div class="profileImage">
+    <img mat-card-md-image  style="width: 18vw; height: 37vh; border-radius: 10vw; margin-top: 2vh; border: 1px solid black; "  [src]="userData.imageUrl" alt={{userData.name}}>
+    <h1 style="margin-top: 5vh; color: black;"> {{userData.name}}</h1>
+  </div>
+
+  <div style="height: 58vh; margin-top: 5vh; background-color: white; border: 1px solid black; width: 45vw;margin-left: 40vw;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius: 0.3vw;" >
+    <div class="content">
+      <mat-icon  style=" color: black;"> email</mat-icon>
+      <label >Email</label>
+      <h2 class="details"> : {{userData.emailId}}</h2>
+    </div>
+    <div class="content">
+      <mat-icon  style="color: black; "> phone</mat-icon>
+      <label >PhoneNo</label>
+      <h2 class="details"> : {{userData.phoneNo}}</h2>
+    </div>
+     <div class="content">
+      <mat-icon  style="color: black; "> location_on</mat-icon>
+      <label >Address</label>
+    <h2 class="details"> : {{userData.address}}</h2>
+    </div> 
+    <div class="content">
+      <mat-icon  style="color: black;"> location_city</mat-icon>
+      <label >City</label>
+      <h2 class="details"> : {{userData.city}}</h2>
+
+
+    </div>
+    <button  routerLink="/edit-profile" class="edit">Edit Profile</button>
+
+  </div>
+
+

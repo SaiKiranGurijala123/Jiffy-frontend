@@ -1,0 +1,26 @@
+
+ <div >
+    <form class="formbox" [formGroup]="logInForm" (ngSubmit)="onSubmit()">
+        <h2>Merchant Log In</h2>
+        <div class="inputbox">
+            <mat-icon style="color: black;position:absolute;margin-left: -2vw ;margin-top: 6.5vh;">email</mat-icon>
+            <input type="text" placeholder="Email Id"  formControlName="emailId" >
+            <div *ngIf="emailId?.invalid && (emailId?.dirty || emailId?.touched)">
+                <div class="errmessage" *ngIf="emailId?.errors?.['required']"> Email ID is required</div>
+                <div class="errmessage" *ngIf="emailId?.errors?.['pattern']"> Enter valid Email ID</div>
+            </div>
+
+        </div>
+        <div>
+            <mat-icon style="color: black;position:absolute;margin-left: -2vw ;margin-top: 6.5vh;">lock</mat-icon>
+            <input type="password" placeholder="Password" formControlName="password">
+            <div *ngIf="password?.invalid && (password?.dirty ||password?.touched)">
+                <div class="errmessage" *ngIf="password?.errors?.['required']">Password is required</div>
+                <div class="errmessage" *ngIf="password?.errors?.['minLength']">Password length min should be 8 letters</div>
+            </div>
+        </div>
+        <button type="submit" [disabled]="!logInForm.valid">Submit</button>
+
+    </form>
+</div>
+<img class="image" src="assets\BackgroundImages\homemade-fresh-stew-coconut-plates-copy-space (1).jpg">

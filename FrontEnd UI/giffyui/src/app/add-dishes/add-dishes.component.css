@@ -1,0 +1,100 @@
+
+.headline{
+  font-size: 5vh;
+  position: absolute;
+  margin-left: 32vw;
+  margin-top: 22vh;
+  color: black;
+  font-family: 'Lobster', cursive;
+  word-spacing: 0.5vw;
+  letter-spacing: 0.2vw;
+}
+
+
+.heading{
+margin-top: 3.5vh;
+font-size: 5vh;
+color: black;
+font-family: 'Belanosima', sans-serif;
+font-family: 'Cinzel', serif;
+}
+
+.formbox{
+  width: 45vw;
+  height: 95vh;
+  text-align: center;
+  margin-left: 28vw;
+  margin-top: 35vh;
+  background-color: transparent;
+  border-radius: 1vw;
+  border: 2px solid black;
+  box-shadow:  0 0 8em -1em rgb(8, 8, 8);
+}
+
+input{
+
+  width: 25vw;
+  height: 5vh;
+  border: 2px solid black;
+  border-radius: 0.5vh;
+  color: black;
+  margin-top: 6vh;
+
+
+}
+
+.subButton{
+  margin-top: 8vh;
+  width: 23vw;
+  height: 6vh;
+  border-radius: 1vw;
+  margin-left: -10vw;
+  color: black;
+  border: none;
+  margin-left: 0vw;
+}
+
+.subButton:hover{
+
+  background-color: rgb(130,42,42);
+  color: white;
+
+}
+
+.element{
+  margin-left: 5vw;
+}
+
+p{
+  color: black;
+  position: absolute;
+  margin-left: 10vw;
+  margin-top: 3vh;
+ 
+}
+
+select{
+  color: black;
+  border: 2px solid black;
+  margin-top: 6vh;
+  width: 25vw;
+  height: 5vh;
+}
+
+.merchantName{
+  position:fixed;
+  color: black;
+  margin-left: 78vw;
+  margin-top:3.7vh;
+  font-size: medium;
+  z-index: 1;
+}
+
+.errors
+{
+  color: red;
+  margin-left: 10vw;
+}
+.errordiv{
+  position: absolute;
+}

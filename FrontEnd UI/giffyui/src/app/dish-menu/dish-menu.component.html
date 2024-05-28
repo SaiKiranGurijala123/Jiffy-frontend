@@ -1,0 +1,116 @@
+<div class="userDetails">
+  <img class="userimage" [src]="userData.imageUrl" alt="image not found">
+  <p style="color: black; margin-top:8vh ;  margin-left: 1vw;">Hi, {{userData.name}}</p>
+</div>
+<div>
+
+
+<div>
+
+  <div class="searchBar">
+    <input type="text" name="Search" placeholder="Search For Dish or Cuisine" [(ngModel)]="searchText">
+    <mat-icon class="searchIcon" >search</mat-icon>
+  </div>
+  <div *ngIf="cartButton">
+    <button  class="yourOrder"   routerLink="/bill-Amount"><mat-icon style="position: absolute;margin-left: -2vw;">shopping_cart</mat-icon>My Cart</button>
+  </div>
+</div>
+<div class="billBox" *ngIf="show">
+  <ul class="bill">
+    <li *ngFor="let dish of selectedDishes">
+      {{ dish.name }} - Quantity: {{ dish.quantity }}
+    </li>
+    <p>Bill Amount: {{ billAmount }}</p>
+
+  </ul>
+</div>
+
+<div >
+  <img class="restaurantImage" [src]="restaurant.imageUrl" alt="">
+  <p class="restaurantName">{{restaurant.name}}</p>
+  <h2 style="margin-left:8vw; font-size: larger;color: black;font-family: 'Raleway', sans-serif;"><mat-icon style="color: black;position: absolute;margin-left: -3vw;margin-top: 0.5vh;">location_on</mat-icon>{{restaurant.location}}</h2>
+
+</div>
+
+
+
+
+
+<button class="sortButton" mat-button [matMenuTriggerFor]="menu"><mat-icon>sort</mat-icon>Sort</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="sort('asc')">Low To High</button>
+  <button mat-menu-item (click)="sort('des')">High to Low</button>
+</mat-menu>
+
+
+<!-- <button class="sortButton" mat-button [matMenuTriggerFor]="menu">V/N</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="sortType('asc')">Veg</button>
+  <button mat-menu-item (click)="sortType('des')">NoN Veg</button>
+</mat-menu> -->
+<button  class="sortButton"  mat-button [matMenuTriggerFor]="aboveMenu"><mat-icon>filter_list</mat-icon>Filter By</button>
+<mat-menu #aboveMenu="matMenu" Position="above">
+  <button mat-menu-item (click)="sortType('Veg')" >Veg</button>
+  <button mat-menu-item  (click)="sortType('NonVeg')">NonVeg</button>
+  <button mat-menu-item  (click)="sortType('allDishes')">All Dishes</button>
+
+</mat-menu>
+
+<button class="menuButton" (click)="getMenu()"><mat-icon style="position: absolute; margin-left: -2vw;font-size: small;margin-top: 0.7vh;"> restaurant_menu</mat-icon>Menu</button>
+<div>
+<div class="menuCard" *ngIf="showMenu" (click)="closeOverlay($event)">
+  <div class="smallcard"><br>
+    <div style="margin-left: 38vw;font-size: x-large;margin-top: -2vh;" (click)="closePopUp()">
+      &times;
+    </div>
+    <p style="text-align: center; font-size: xx-large; margin-top: 2vh;"><mat-icon> restaurant_menu</mat-icon>MENU</p><br><br>
+    <tr *ngFor="let dish of restaurant.dishes">
+      <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{{dish.name}}</td>
+      <td>: &nbsp; &nbsp; &nbsp; &#8377;{{dish.price}}</td>
+      </tr>
+  </div>
+</div>
+</div>
+
+
+<div class="main" *ngIf="!dishFilter">
+    <div class="dishcard" *ngFor="let dish of restaurant.dishes  | filter:searchText ">
+        <img class="images" [src]="dish.imageUrl" alt={{dish.name}}>
+        <p style="font-size:x-large;margin-top: 1vh;font-family: 'Raleway', sans-serif;">{{dish.name}}</p>
+        
+      
+        <p style="margin-left: 0vw; font-size:3.5vh;margin-top: 0vh;">{{dish.cuisine}}</p>
+        <p style="margin-left: -18vw; font-size:3.5vh;margin-top: 4vh; ">&#8377; {{dish.price}}</p>
+        
+        <mat-icon class="addToCartButton" (click)=" addToMethod(dish)" style="background-color: transparent; color: black;">shopping_cart</mat-icon>
+        <mat-icon class="favIcon" (click)="addDishtoFav(dish)">favorite_border</mat-icon>
+
+    </div>
+
+</div>
+
+<div class="main" *ngIf="dishFilter">
+  <div class="dishcard" *ngFor="let dish of filterdDishes  | filter:searchText ">
+      <img class="images" [src]="dish.imageUrl" alt={{dish.name}}>
+      <p style="font-size:x-large;margin-top: 1vh;">{{dish.name}}</p>
+      <p style="margin-left: 0vw; font-size:3.5vh;margin-top: 0vh;">{{dish.cuisine}}</p>
+      <p style="margin-left: -18vw; font-size:3.5vh;margin-top: 4vh; ">&#8377; {{dish.price}}</p>
+      <mat-icon class="addToCartButton" (click)=" addToMethod(dish)" style="background-color: transparent; color: black;">shopping_cart</mat-icon>
+      <mat-icon class="favIcon" (click)="addDishtoFav(dish)">favorite_border</mat-icon>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

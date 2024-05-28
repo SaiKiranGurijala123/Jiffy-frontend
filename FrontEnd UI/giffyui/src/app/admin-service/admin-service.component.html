@@ -1,0 +1,31 @@
+
+  <div class="table">
+    <tr class="mainTitles">
+        <th class="td">Merchant Email Id</th>
+        <th class="td">Restaurant Name</th>
+        <th class="td">Status</th>
+        <th class="td">Approve/Reject</th>
+    </tr>
+    <div *ngFor="let merchant of allMerchantsData">
+        <table  *ngFor="let restaurant of merchant.restaurants">
+
+            <tr>
+                <td>{{merchant.emailId}}</td>
+                <td>{{restaurant.name}}</td>
+                <td *ngIf="restaurant.status==true">Approved</td>
+                <td  *ngIf="restaurant.status==false">Pending</td>
+                <td><button *ngIf="restaurant.status==false" (click)="restaurantAproval(merchant.emailId,restaurant)">Approve</button>
+                <button *ngIf="restaurant.status==true" (click)="restaurantReject(merchant.emailId,restaurant)">Reject</button></td>
+            </tr>
+        </table>
+
+
+    </div>
+  </div>
+
+
+
+
+
+
+

@@ -1,0 +1,61 @@
+<div class="userDetails">
+  <img class="userimage" [src]="user.imageUrl" alt="image not found">
+  <p style="color: black; margin-top:8vh ;  margin-left: 1vw;">Hi, {{user.name}}</p>
+</div>
+<div>
+
+<div class="bodydiv">
+  <form class="form-horizontal" class="formbox" [formGroup]="updatedUser" (ngSubmit)="editUser()">
+    <h2 class="formTitle">Edit Account Info</h2>
+    <img class="userimages" [src]="updatedUser.value.imageUrl || user.imageUrl">
+    <div class="uploadImage">
+      <h4 style="position: absolute; color: black; margin-left: 5vw;">Upload photo:</h4>
+      <input style="border: none; margin-left: 15vw;" (change)="converter($event)" type="file" formControlName="imageUrl" name="imageUrl" class="text"/>
+    </div>
+    <div>
+      <mat-icon style="margin-left: -16vw; margin-top: 3vh ;position: absolute; color: black;">account_circle</mat-icon>
+      <label class="label">Name :</label>
+      <div>
+        <input type="text" placeholder="{{user?.name}}" formControlName="name">
+      </div>
+    </div>
+    <div class="inputbox">
+      <mat-icon style="margin-left: -16vw; margin-top: 3vh ;position: absolute; color: black;"> email</mat-icon>
+      <label class="label">Email ID :</label>
+      <div>
+        <input type="text" placeholder="{{user?.emailId}}" formControlName="emailId">
+        <div *ngIf="emailId?.invalid && (emailId?.dirty || emailId?.touched)">
+          <div class="errmessage" *ngIf="emailId?.errors?.['pattern']">Enter valid Email ID</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <mat-icon  style="margin-left: -16vw; margin-top: 3vh ;position: absolute; color: black;"> phone</mat-icon>
+      <label class="label">Contact No :</label>
+      <div>
+        <input type="number" placeholder="{{user?.phoneNo}}" formControlName="phoneNo">
+        <div *ngIf="phoneNo?.invalid && (phoneNo?.dirty || phoneNo?.touched)">
+          <div class="errmessage" *ngIf="phoneNo?.errors?.['pattern']">Enter valid Phone Number</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <mat-icon  style="margin-left: -16vw; margin-top: 3vh ;position: absolute; color: black;"> location_on</mat-icon>
+      <label class="label">Address :</label>
+      <div>
+        <input type="text" placeholder="{{user?.address}}" formControlName="address">
+      </div>
+    </div>
+    <div>
+      <mat-icon style="margin-left: -16vw; margin-top: 3vh ;position: absolute; color: black;">location_city</mat-icon>
+      <label class="label">City :</label>
+      <div>
+        <select style="background-color: white; width: 15vw; margin-top: 4vh;" class="inputcity" id="city" formControlName="city">
+          <option value="" disabled>{{user?.city}}</option>
+          <option *ngFor="let location of locations" [value]="location">{{ location }}</option>
+        </select>
+      </div>
+    </div>
+    <button class="submit" type="submit">Update</button>
+  </form>
+</div>

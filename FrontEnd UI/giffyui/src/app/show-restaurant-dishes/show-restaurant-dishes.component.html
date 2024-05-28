@@ -1,0 +1,62 @@
+
+<div>
+    <h1 class="titleName">Restaurant Dishes</h1>
+    <div  class="main" *ngFor="let restaurant of merchantdetails.restaurants">
+        <div  *ngFor="let dish of restaurant.dishes">
+            <div class="dishData">
+                <div class="dishName">
+                    <p style="margin-top: 2vh;" >{{dish.name}}</p>
+                </div>
+                <img class="images" [src]="dish.imageUrl" alt={{dish.name}}>
+                <p class="price">Category : {{dish.category}}</p>
+                <p class="price">Price : {{dish.price}}</p>
+                <button class="editButton" type="button" (click)="edit(dish)">Update</button>
+                <button class="deleteButton"  (click)="deleteDishFromResstaurant(restaurant.name,dish.name)">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="overlay" *ngIf="show" (click)="closeOverlay($event)">
+
+    <div class="totalForm" *ngFor="let restaurant of merchantdetails.restaurants">
+        <form style="background-color: white;" class="updateForm" #updateForm="ngForm" (ngSubmit)="updateDish(restaurant.name)">
+
+            <div class="content"  >
+                <div class="close" (click)="closePopUp()">
+                    &times;
+                </div>
+
+
+                <h2>Dish Details</h2>
+
+                <div>
+                    <input disabled type="text" name="Name" placeholder="dian name" [(ngModel)]="dishToUpdate.name" #name="ngModel">
+                </div>
+                <div>
+                    <input type="text" name="cuisine" placeholder="cuisine" [(ngModel)]="dishToUpdate.cuisine" #imageUrl="ngModel" >
+                </div>
+                <div>
+                    <input type="number" name=price placeholder="price" [(ngModel)]="dishToUpdate.price" #location="ngModel">
+                </div>
+                <div>
+                    <input type="text" name=category placeholder="category" [(ngModel)]="dishToUpdate.category" #location="ngModel">
+                </div>
+                <div class="updateDishimage">
+                    <input  type="file" name=imageUrl placeholder="imageUrl" [(ngModel)]="dishToUpdate.imageUrl" #location="ngModel">
+                </div>
+                <div>
+                    <input type="text" name=description placeholder="description" [(ngModel)]="dishToUpdate.description" #location="ngModel">
+                </div>
+              <input class="updateButton" type="submit" value="Update">
+                <!-- <button type="submit">submit</button> -->
+            </div>
+        </form>
+
+    </div>
+
+
+</div>
+
+
+

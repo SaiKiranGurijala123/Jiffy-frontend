@@ -1,0 +1,77 @@
+
+.userimage{
+  width: 4vw;
+  height: 8vh;
+  margin-left: 2vw;
+  margin-top: 2vh;
+  border-radius: 50px 50px 50px 50px;
+}
+
+.userDetails{
+  position: fixed;
+  margin-left: 80vw;
+  display: flex;
+  z-index: 1;
+}
+
+
+.heading{
+  color: black;
+  position: absolute;
+  margin-left: 30vw;
+  margin-top: -20vh;
+  font-size: 8vh;
+  letter-spacing: 5px;
+  font-family: 'Belanosima', sans-serif;
+  font-family: 'Cinzel', serif;
+}
+
+  .buttons{
+    margin-left: 70vw;
+  }
+
+  .image{
+    width: 25vw;
+    height: 30vh;
+  }
+  .dishCard{
+    text-align: center;
+    margin-top: 10vh;
+    width: 26vw;
+    height: 40vh;
+    box-shadow: 0 0 3em -1em black;
+    border-radius: 2vh;
+    transition: all 0.3s;
+
+
+}
+.dishCard:hover{
+    box-shadow: 0 0 5em -1em black;
+    transform: scale(1.1);
+
+}
+.image{
+  border-radius: 2vh;
+  margin-top: 1vh;
+}
+.deleteButton{
+  position: absolute;
+  margin-top:-6vh;
+  margin-left: 8vw;
+  color:black;
+
+}
+
+.mainCard{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.message{
+  font-family: 'Lobster', cursive;
+  margin-left: 15vw;
+  font-size: 8vh;
+  margin-top: 55vh;
+  color: rgb(130,42,42);
+}
